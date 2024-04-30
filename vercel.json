@@ -1,9 +1,15 @@
 {
     "version": 2,
     "builds": [
-        {"src": "formSubmission.py", "use": "@vercel/python"}
+        {
+            "src": "./formSubmission.py",
+            "use": "@vercel/python"
+        }
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "formSubmission.py"}
+        {
+            "src": "/(.*)",
+            "dest": "formSubmission.py"
+        }
     ]
 }
