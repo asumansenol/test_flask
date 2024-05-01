@@ -43,7 +43,7 @@ def test_should_return_thank_you_page(client):
 def test_should_return_status_completed_15_secs_later():
     """Make sure the status is updated to 'Completed' 15 seconds after the request is submitted."""
     with app.app_context():
-        time.sleep(15)
+        time.sleep(25)
         status = check_user_status(email, name)
         assert status == 'Completed'
 

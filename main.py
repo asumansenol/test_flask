@@ -35,7 +35,7 @@ def form():
     return render_template('form.html')
 
 def invoke_service(key):
-    url = f'https://notional-device-421909-a8.lm.r.appspot.com/update_data/{key}'
+    url = f'https://another-service-dot-notional-device-421909-a8.lm.r.appspot.com/update_data/{key}'
     requests.put(url)
 
 # PUT endpoint to update data
