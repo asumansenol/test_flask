@@ -1,7 +1,6 @@
 from flask import current_app, g
 import mysql.connector
 
-# get the environment variables
 db_user = 'test'
 db_password = 'asutest'
 db_name = 'asu_interview'
@@ -54,3 +53,11 @@ def add_user(user):
     conn.commit()
     cursor.close()
     return user_id
+
+def check_user_status(email, name):
+    conn = getdb()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute('SELECT * FROM Users WHERE Email = %s AND Name = %s', (email, name))
+    user = cursor.fetchone()
+    cursor.close()
+    return user.get('Status') if user else None
